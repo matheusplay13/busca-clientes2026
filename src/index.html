@@ -4,23 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buscar CEP</title>
+  <title>Buscar Clientes</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <header>
-    <h1>Consulta de CEP</h1>
-    <img src="../assets/images/logo.png" alt="Logo Correios" 
-    class="logo-correios">
+    <h1>Consulta de Clientes</h1>
   </header>
 
   <main>
-    <label for="cep">Digite o CEP:</label><br>
-    <input type="text" id="cep" maxlength="9" 
-    placeholder="Ex: 01001-000" />
-    <button onclick="buscarCep()">Buscar</button>
+    <label for="cliente">Digite o CPF do cliente:</label><br>
+    <input type="text" id="cliente" 
+    placeholder="Ex: 123.456.789-00" />
+    <div class="botoes-container">
+      <button class="btn-buscar" onclick="buscarCliente()">Buscar</button>
+      <button class="btn-todos" onclick="mostrarTodosClientes()">Mostrar Todos</button>
+    </div>
     <div id="resultado"></div>
   </main>
 
