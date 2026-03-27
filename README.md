@@ -1,16 +1,15 @@
-# 🔍 Projeto Busca CEP com HTML, CSS e JavaScript
+# 🔍 Projeto Busca CLIENTES com HTML, CSS e JavaScript
 
-Este é um projeto simples que permite buscar o endereço de um CEP utilizando a [API ViaCEP](https://viacep.com.br/). Feito com HTML, CSS e JavaScript puro, sem bibliotecas externas.
+Este é um projeto simples que permite buscar todos os clientes por cpf [API CADASTRO-CLIENTES](http://localhost:3000/clientes). Feito com HTML, CSS e JavaScript puro, sem bibliotecas externas.
 
 ---
 
 ## 🚀 Funcionalidades
 
-- Busca de endereço pelo CEP
-- Exibição dinâmica do resultado (rua, bairro, cidade, estado)
-- Validação básica do campo CEP
+- Busca clientes por CPF
+- Exibição dinâmica dos resultados
+- Validação básica do campo CPF
 - Estilização com CSS responsivo
-- Layout com cabeçalho e logo dos Correios
 
 ---
 
@@ -19,6 +18,6 @@ Este é um projeto simples que permite buscar o endereço de um CEP utilizando a
 - HTML5
 - CSS3
 - JavaScript 
-- API ViaCEP (https://viacep.com.br)
+- API CADASTRO-CLIENTES (http://localhost:3000/clientes)
 
 
