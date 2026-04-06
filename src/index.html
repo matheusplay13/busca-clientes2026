@@ -1,31 +1,63 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
+
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Buscar Clientes</title>
+
   <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 
 <body>
 
+
+
   <header>
+
     <h1>Consulta de Clientes</h1>
+
   </header>
 
+
+
   <main>
+
     <label for="cliente">Digite o CPF do cliente:</label><br>
+
     <input type="text" id="cliente" 
+
     placeholder="Ex: 123.456.789-00" />
+
     <div class="botoes-container">
+
       <button class="btn-buscar" onclick="buscarCliente()">Buscar</button>
+
       <button class="btn-todos" onclick="mostrarTodosClientes()">Mostrar Todos</button>
+      <button class="btn-novo" onclick="window.location.href='cadastro.html'">Novo Cliente</button>
+     <!-- <button class="btn-novo" onclick="irParaCadastro()">Novo Cliente</button>-->
+
     </div>
+
     <div id="resultado"></div>
+
   </main>
 
+
+
   <script src="script.js"></script>
+
 </body>
+
+
 
 </html>
