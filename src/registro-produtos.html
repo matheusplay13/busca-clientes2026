@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Produtos - Sistema de Gestão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Registro de Produtos</h1>
+    <div id="userInfo" style="color: white; margin-bottom: 1rem; text-align: center;"></div>
+  </header>
+
+  <main>
+    <div class="registro-container">
+      <!-- Filtros e Busca -->
+      <div class="filtros-section">
+        <div class="filtros-container">
+          <div class="filtro-item">
+            <label for="buscaProduto">Buscar Produto:</label>
+            <input type="text" id="buscaProduto" placeholder="Digite o nome ou ID..." />
+          </div>
+          
+          <div class="filtro-item">
+            <label for="filtroCategoria">Categoria:</label>
+            <select id="filtroCategoria">
+              <option value="">Todas as Categorias</option>
+              <option value="eletronicos">Eletrônicos</option>
+              <option value="moveis">Móveis</option>
+              <option value="roupas">Roupas</option>
+              <option value="alimentos">Alimentos</option>
+              <option value="livros">Livros</option>
+              <option value="brinquedos">Brinquedos</option>
+              <option value="esportes">Esportes</option>
+              <option value="outros">Outros</option>
+            </select>
+          </div>
+          
+          <div class="filtro-item">
+            <label for="filtroEstoque">Estoque:</label>
+            <select id="filtroEstoque">
+              <option value="">Todos</option>
+              <option value="baixo">Estoque Baixo (&lt; 5)</option>
+              <option value="normal">Estoque Normal (5+)</option>
+              <option value="alto">Estoque Alto (20+)</option>
+            </select>
+          </div>
+          
+          <div class="filtro-item">
+            <button class="btn-buscar" onclick="filtrarProdutos()">
+              <span class="btn-icon">Filter</span>
+              Filtrar
+            </button>
+            <button class="btn-todos" onclick="mostrarTodosProdutos()">
+              <span class="btn-icon">List</span>
+              Mostrar Todos
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estatísticas Rápidas -->
+      <div class="stats-produtos">
+        <div class="stat-produto">
+          <span class="stat-number" id="totalProdutos">0</span>
+          <span class="stat-label">Total de Produtos</span>
+        </div>
+        <div class="stat-produto">
+          <span class="stat-number" id="totalEstoque">0</span>
+          <span class="stat-label">Itens em Estoque</span>
+        </div>
+        <div class="stat-produto">
+          <span class="stat-number" id="valorTotal">R$ 0</span>
+          <span class="stat-label">Valor Total</span>
+        </div>
+        <div class="stat-produto">
+          <span class="stat-number" id="estoqueBaixo">0</span>
+          <span class="stat-label">Estoque Baixo</span>
+        </div>
+      </div>
+
+      <!-- Tabela de Produtos -->
+      <div class="tabela-section">
+        <h3>Produtos Cadastrados</h3>
+        <div class="table-container">
+          <table class="produtos-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Localização</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaProdutos">
+              <tr>
+                <td colspan="8" style="text-align: center; padding: 3rem;">
+                  <div class="loading">Carregando produtos...</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="acoes-section">
+        <h3>Ações Rápidas</h3>
+        <div class="action-buttons">
+          <button class="btn-cadastrar" onclick="irParaCadastro()">
+            <span class="btn-icon">Add</span>
+            Novo Cliente
+          </button>
+          <button class="btn-produtos" onclick="irParaCadastroProdutos()">
+            <span class="btn-icon">Add</span>
+            Cadastrar Produto
+          </button>
+          <button class="btn-buscar" onclick="irParaBusca()">
+            <span class="btn-icon">Search</span>
+            Buscar Clientes
+          </button>
+          <button class="btn-voltar" onclick="voltarAoInicio()">
+            <span class="btn-icon">Home</span>
+            Voltar ao Início
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="registro-produtos.js"></script>
+</body>
+</html>

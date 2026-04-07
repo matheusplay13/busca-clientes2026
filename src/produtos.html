@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Produtos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Produtos</h1>
+    <div id="userInfo" style="color: white; margin-bottom: 1rem; text-align: center;"></div>
+  </header>
+
+  <main>
+    <form id="formProduto" onsubmit="cadastrarProduto(event)">
+      <div class="form-group">
+        <label for="id_produto">ID do Produto:</label>
+        <input type="text" id="id_produto" name="id_produto" required 
+        placeholder="Ex: PRD-001" readonly />
+        <small style="color: #6c757d; font-size: 0.9rem;">ID gerado automaticamente</small>
+      </div>
+
+      <div class="form-group">
+        <label for="nome_produto">Nome do Produto:</label>
+        <input type="text" id="nome_produto" name="nome_produto" required 
+        placeholder="Ex: Notebook Dell" />
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="3" required
+        placeholder="Descreva o produto detalhadamente..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Preço (R$):</label>
+        <input type="number" id="preco" name="preco" required 
+        placeholder="Ex: 2999.90" step="0.01" min="0.01" />
+      </div>
+
+      <div class="form-group">
+        <label for="quantidade">Quantidade em Estoque:</label>
+        <input type="number" id="quantidade" name="quantidade" required 
+        placeholder="Ex: 10" min="0" />
+      </div>
+
+      <div class="form-group">
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecione uma categoria</option>
+          <option value="eletronicos">Eletrônicos</option>
+          <option value="moveis">Móveis</option>
+          <option value="roupas">Roupas</option>
+          <option value="alimentos">Alimentos</option>
+          <option value="livros">Livros</option>
+          <option value="brinquedos">Brinquedos</option>
+          <option value="esportes">Esportes</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="localizacao">Localização do Produto:</label>
+        <input type="text" id="localizacao" name="localizacao" required 
+        placeholder="Ex: Armário A, Prateleira 3, Setor B" />
+      </div>
+
+      <div class="form-group">
+        <label for="fornecedor">Fornecedor:</label>
+        <input type="text" id="fornecedor" name="fornecedor" required 
+        placeholder="Ex: Tech Distribuidora" />
+      </div>
+
+      <div class="form-group">
+        <label for="codigo_barras">Código de Barras:</label>
+        <input type="text" id="codigo_barras" name="codigo_barras" 
+        placeholder="Ex: 7891234567890" maxlength="13" />
+      </div>
+
+      <div class="botoes-container">
+        <button type="submit" class="btn-cadastrar btn-spin" id="btnCadastrar">
+          <span class="btn-text">Registra o produto</span>
+          <span class="btn-spinner" style="display: none;">Registrando...</span>
+        </button>
+        <button type="button" class="btn-voltar" onclick="irParaBusca()">Voltar</button>
+        <button type="button" class="btn-voltar" onclick="voltarAoInicio()">🏠 Voltar ao Início</button>
+      </div>
+    </form>
+
+    <div id="resultado"></div>
+  </main>
+
+  <script src="produtos.js"></script>
+</body>
+</html>

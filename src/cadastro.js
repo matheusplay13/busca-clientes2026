@@ -175,3 +175,14 @@ function irParaLogin() {
   console.log('Indo para login...');
   window.location.href = 'login.html';
 }
+
+function irParaCadastro() {
+  console.log('Indo para cadastro...');
+  window.location.href = 'cadastro.html';
+}
+
+// Função para voltar ao início
+function voltarAoInicio() {
+  console.log('Voltando ao início...');
+  window.location.href = 'home.html';
+}
