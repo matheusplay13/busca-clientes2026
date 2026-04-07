@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Sistema de Gestão</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📊 Dashboard</h1>
+    <div id="userInfo" style="color: white; margin-bottom: 1rem; text-align: center;"></div>
+  </header>
+
+  <main>
+    <div class="dashboard-container">
+      <!-- Cards de Estatísticas -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-content">
+            <h3 class="stat-number" id="totalClientes">0</h3>
+            <p class="stat-label">Total de Clientes</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">📦</div>
+          <div class="stat-content">
+            <h3 class="stat-number" id="totalProdutos">0</h3>
+            <p class="stat-label">Total de Produtos</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-content">
+            <h3 class="stat-number" id="totalEstoque">0</h3>
+            <p class="stat-label">Itens em Estoque</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-content">
+            <h3 class="stat-number" id="valorTotal">R$ 0</h3>
+            <p class="stat-label">Valor Total</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráficos -->
+      <div class="charts-grid">
+        <div class="chart-container">
+          <h3>📊 Produtos por Categoria</h3>
+          <canvas id="categoriaChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+          <h3>📈 Estoque por Produto</h3>
+          <canvas id="estoqueChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Tabela de Produtos com Estoque Baixo -->
+      <div class="alert-section">
+        <h3>⚠️ Produtos com Estoque Baixo</h3>
+        <div class="table-container">
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Status</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaEstoqueBaixo">
+              <tr>
+                <td colspan="5" style="text-align: center; padding: 2rem;">
+                  Nenhum produto com estoque baixo no momento.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Últimas Atividades -->
+      <div class="recent-section">
+        <h3>🕐 Últimas Atividades</h3>
+        <div class="activity-list" id="listaAtividades">
+          <div class="activity-item">
+            <div class="activity-icon">📦</div>
+            <div class="activity-content">
+              <p class="activity-text">Sistema inicializado</p>
+              <span class="activity-time">Agora</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botões de Ação Rápida -->
+      <div class="quick-actions">
+        <h3>🚀 Ações Rápidas</h3>
+        <div class="action-buttons">
+          <button class="btn-cadastrar" onclick="irParaCadastro()">
+            <span class="btn-icon">👥</span>
+            Novo Cliente
+          </button>
+          <button class="btn-produtos" onclick="irParaProdutos()">
+            <span class="btn-icon">📦</span>
+            Cadastrar Produto
+          </button>
+          <button class="btn-buscar" onclick="irParaBusca()">
+            <span class="btn-icon">🔍</span>
+            Buscar Clientes
+          </button>
+          <button class="btn-voltar" onclick="voltarAoInicio()">
+            <span class="btn-icon">🏠</span>
+            Voltar ao Início
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

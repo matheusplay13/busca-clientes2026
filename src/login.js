@@ -62,6 +62,12 @@ function irParaBusca() {
   window.location.href = 'index.html';
 }
 
+// Função para voltar ao início
+function voltarAoInicio() {
+  console.log('Voltando ao início...');
+  window.location.href = 'home.html';
+}
+
 // Verificar se já está logado
 function verificarLogin() {
   const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado') || 'null');

@@ -46,8 +46,21 @@
       <button class="btn-todos" onclick="mostrarTodosClientes()">Mostrar Todos</button>
       <button class="btn-cadastrar" onclick="irParaCadastro()">Novo Cliente</button>
       <button class="btn-login" onclick="irParaLogin()">Login</button>
+      <button class="btn-produtos" onclick="irParaProdutos()">Cadastrar Produto</button>
+      <button class="btn-registro" onclick="irParaRegistro()">Registro de Produtos</button>
+      <button class="btn-voltar" onclick="voltarAoInicio()">Voltar ao Início</button>
       <a href="login.html" class="btn-login" style="text-decoration: none; display: inline-block; text-align: center;">Login (Link Direto)</a>
 
+    </div>
+
+    <hr style="margin: 2rem 0; border: 1px solid rgba(255,255,255,0.3);">
+
+    <label for="produto_id">Buscar Produto por ID:</label><br>
+    <input type="text" id="produto_id" 
+    placeholder="Ex: PRD-20260407-14302245" />
+
+    <div class="botoes-container">
+      <button class="btn-buscar" onclick="buscarProdutoPorID()">Buscar Produto</button>
     </div>
 
     <div id="resultado"></div>

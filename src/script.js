@@ -238,6 +238,68 @@ function verificarUsuarioLogado() {
   }
 }
 
+// Função de busca de produtos por ID
+function buscarProdutoPorID() {
+  const idProduto = document.getElementById('produto_id').value.trim();
+  const resultado = document.getElementById('resultado');
+  
+  if (!idProduto) {
+    resultado.innerHTML = '<p class="error">Digite o ID do produto.</p>';
+    return;
+  }
+  
+  resultado.innerHTML = '<div class="loading">Buscando produto...</div>';
+  
+  // Buscar no localStorage primeiro
+  const produtos = JSON.parse(localStorage.getItem('produtos') || '[]');
+  const produto = produtos.find(p => p.id_produto === idProduto);
+  
+  if (produto) {
+    mostrarResultadoProduto(produto);
+  } else {
+    // Tentar buscar na API
+    fetch(`http://localhost:3000/clientes/${idProduto}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Produto não encontrado');
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data.id_produto) {
+          mostrarResultadoProduto(data);
+        } else {
+          resultado.innerHTML = '<p class="error">Produto não encontrado.</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao buscar produto:', error);
+        resultado.innerHTML = '<p class="error">Produto não encontrado.</p>';
+      });
+  }
+}
+
+// Mostrar resultado da busca de produto
+function mostrarResultadoProduto(produto) {
+  const resultado = document.getElementById('resultado');
+  resultado.innerHTML = `
+    <div class="cliente-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+      <h3 style="margin-bottom: 1rem;">Produto Encontrado!</h3>
+      <p><strong>ID:</strong> ${produto.id_produto}</p>
+      <p><strong>Nome:</strong> ${produto.nome_produto}</p>
+      <p><strong>Descrição:</strong> ${produto.descricao}</p>
+      <p><strong>Preço:</strong> R$ ${produto.preco.toFixed(2)}</p>
+      <p><strong>Quantidade:</strong> ${produto.quantidade} unidades</p>
+      <p><strong>Categoria:</strong> ${produto.categoria}</p>
+      <p><strong>Localização:</strong> ${produto.localizacao}</p>
+      <p><strong>Fornecedor:</strong> ${produto.fornecedor}</p>
+      ${produto.codigo_barras ? `<p><strong>Código de Barras:</strong> ${produto.codigo_barras}</p>` : ''}
+      <p><strong>Data de Cadastro:</strong> ${new Date(produto.data_cadastro).toLocaleDateString('pt-BR')}</p>
+      <p><strong>Cadastrado por:</strong> ${produto.usuario_cadastro}</p>
+    </div>
+  `;
+}
+
 // Função de navegação com múltiplos métodos
 function irParaLogin() {
   console.log('=== TESTANDO NAVEGAÇÃO ===');
@@ -286,6 +348,22 @@ function irParaLogin() {
 function irParaCadastro() {
   console.log('Indo para cadastro...');
   window.location.href = 'cadastro.html';
+}
+
+function irParaProdutos() {
+  console.log('Indo para cadastro de produtos...');
+  window.location.href = 'produtos.html';
+}
+
+function irParaRegistro() {
+  console.log('Indo para Registro de Produtos...');
+  window.location.href = 'registro-produtos.html';
+}
+
+// Função para voltar ao início
+function voltarAoInicio() {
+  console.log('Voltando ao início...');
+  window.location.href = 'home.html';
 }
 
 // Adicionar evento de load para verificar usuário logado

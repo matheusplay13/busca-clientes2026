@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Gestão - Início</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema de Gestão</h1>
+    <div id="userInfo" style="color: white; margin-bottom: 1rem; text-align: center;"></div>
+  </header>
+
+  <main>
+    <div class="welcome-container">
+      <div class="welcome-card">
+        <h2 class="welcome-title">🎉 Bem-vindo ao Sistema!</h2>
+        <p class="welcome-subtitle">Desenvolvido com ❤️ por:</p>
+        
+        <div class="developers-section">
+          <div class="developer-card">
+            <div class="developer-avatar">👨‍💻</div>
+            <h3>Matheus Silla</h3>
+            <p class="developer-role">Desenvolvedor Full Stack</p>
+            <p class="developer-desc">Especialista em frontend e backend</p>
+          </div>
+          
+          <div class="developer-card">
+            <div class="developer-avatar">👨‍💻</div>
+            <h3>Kelvis</h3>
+            <p class="developer-role">Desenvolvedor Backend</p>
+            <p class="developer-desc">Especialista em APIs e banco de dados</p>
+          </div>
+        </div>
+        
+        <div class="features-section">
+          <h3>🚀 Funcionalidades do Sistema</h3>
+          <div class="features-grid">
+            <div class="feature-item">
+              <span class="feature-icon">👥</span>
+              <h4>Gestão de Clientes</h4>
+              <p>Cadastre e consulte clientes facilmente</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">📦</span>
+              <h4>Controle de Produtos</h4>
+              <p>Gerencie seu estoque com IDs únicos</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔐</span>
+              <h4>Sistema de Login</h4>
+              <p>Acesso seguro com autenticação</p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔄</span>
+              <h4>Sincronização</h4>
+              <p>API e localStorage integrados</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="action-section">
+          <h3>🎯 O que você deseja fazer?</h3>
+          <div class="action-buttons">
+            <button class="btn-buscar" onclick="irParaBusca()">
+              <span class="btn-icon">🔍</span>
+              Buscar Clientes
+            </button>
+            <button class="btn-cadastrar" onclick="irParaCadastro()">
+              <span class="btn-icon">👥</span>
+              Novo Cliente
+            </button>
+            <button class="btn-produtos" onclick="irParaProdutos()">
+              <span class="btn-icon">📦</span>
+              Cadastrar Produto
+            </button>
+            <button class="btn-login" onclick="irParaLogin()">
+              <span class="btn-icon">🔐</span>
+              Fazer Login
+            </button>
+          </div>
+        </div>
+        
+        <div class="tech-section">
+          <h3>🛠️ Tecnologias Utilizadas</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <span class="tech-icon">🌐</span>
+              <h4>Frontend</h4>
+              <p>HTML5, CSS3, JavaScript</p>
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">⚙️</span>
+              <h4>Backend</h4>
+              <p>Node.js, Express</p>
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">🗄️</span>
+              <h4>Banco de Dados</h4>
+              <p>LocalStorage, JSON</p>
+            </div>
+            <div class="tech-item">
+              <span class="tech-icon">🎨</span>
+              <h4>Design</h4>
+              <p>CSS Moderno, Animações</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="home.js"></script>
+</body>
+</html>
